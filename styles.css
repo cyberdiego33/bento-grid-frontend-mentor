@@ -185,6 +185,7 @@ img {
     #schedule {
         overflow: hidden;
         padding-right: 0;
+        text-align: left;
     }
     #schedule img{
         width: 400px;
