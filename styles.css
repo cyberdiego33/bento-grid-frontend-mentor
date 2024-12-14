@@ -1,0 +1,212 @@
+/* ## Colors
+
+- Purple 100: hsl(254, 88%, 90%)
+- Purple 500: hsl(256, 67%, 59%)
+
+- Yellow 100: hsl(31, 66%, 93%)
+- Yellow 500: hsl(39, 100%, 71%)
+
+- White: hsl(0, 0%, 100%)
+- Black: hsl(0, 0%, 7%)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --Purple_100: hsl(254, 88%, 90%);
+    --Purple_500: hsl(256, 67%, 59%);
+    --Yellow_100: hsl(31, 66%, 93%);
+    --Yellow_500: hsl(39, 100%, 71%);
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 7%);
+}
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+html {
+    font-size: 18px;
+}
+body {
+    background-color: #f9f9f9;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: 'DM Sans';
+}
+.centered-gap {
+    gap: 1em;
+    text-align: center;
+    justify-items: center;
+    align-content: center;
+}
+.box {
+    padding: 1em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: relative;
+    line-height: 1.1;
+    gap: 1em;
+    flex-direction: column;
+}
+.container {
+    max-width: 375px;
+    padding: 30px 10px;
+    display: grid;
+    grid-template-columns: 350px;
+    gap: 1em;
+    grid-template-areas: 
+    "social"
+    "manage"
+    "maintain"
+    "schedule"
+    "grow"
+    "faster"
+    "create"
+    "write";
+}
+h1 {
+    font-size: 2.75rem;
+    font-weight: 600;
+}
+h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+img {
+    width: 80%;
+    display: block;
+}
+#social {
+    grid-area: social;
+    background-color: var(--Purple_500);
+    color: var(--White);
+}
+#social img {
+    width: 220px;
+    margin: 0 auto;
+}
+#manage {
+    grid-area: manage;
+    background-color: var(--White);
+}
+#manage img{
+    width: 333px;
+}
+#maintain {
+    grid-area: maintain;
+    background-color: var(--Yellow_500);
+    align-content: flex-start;
+    padding-bottom: 0;
+    height: 260px;
+    overflow: hidden;
+    justify-content: flex-start;
+}
+#maintain img{
+    width: 230px;
+}
+#schedule {
+    grid-area: schedule;
+    background-color: var(--Purple_100);
+}
+#schedule img {
+    width: 310px;
+}
+#grow {
+    grid-area: grow;
+    background-color: var(--Purple_500);
+    color: var(--White);
+}
+#grow img {
+    width: 230px;
+    margin: 0 auto;
+}
+#faster {
+    grid-area: faster;
+    background-color: var(--White);
+    justify-content: flex-start;
+}
+#faster img{
+    width: 200px;
+}
+#create {
+    grid-area: create;
+    background-color: var(--Yellow_100);
+}
+#create img {
+    width: 200px;
+}
+#write {
+    grid-area: write;
+    background-color: var(--Yellow_500);
+}
+#write img {
+    width: 200px;
+}
+
+@media screen and (min-width: 810px) {
+    .container {
+        max-width: 810px;
+        grid-template-columns: 236px;
+        grid-auto-rows: 75px;
+        grid-template-areas: 
+        "create social social"
+        "create social social"
+        "create social social"
+        "create social social"
+        "create manage maintain"
+        "write manage maintain"
+        "write manage maintain"
+        "write faster schedule"
+        "write faster schedule"
+        "write faster schedule"
+        "grow grow schedule"
+        "grow grow schedule"
+        "grow grow schedule";
+    }
+    #manage {
+        overflow: hidden;
+        justify-content: flex-start;
+    }
+    #grow {
+        flex-direction: row;
+        align-items: center;
+    }
+    #schedule {
+        overflow: hidden;
+        padding-right: 0;
+    }
+    #schedule img{
+        width: 400px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 75px;
+        grid-template-areas: 
+        "create social  social   schedule"
+        "create social  social   schedule"
+        "create social  social   schedule"
+        "create social  social   schedule"
+        "create manage  maintain schedule"
+        "write  manage  maintain schedule"
+        "write  manage  maintain schedule"
+        "write  faster  grow     grow"
+        "write  faster  grow     grow"
+        "write  faster  grow     grow"
+        ;
+    }
+}
